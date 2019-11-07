@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
         callbackManager=CallbackManager.Factory.create();
         loginButton.setReadPermissions(Arrays.asList("email","public_profile"));
+        checkLoginStatus();
+
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -129,6 +131,16 @@ public class MainActivity extends AppCompatActivity {
         parameters.putString("fields","first_name,last_name,email,id");
         request.setParameters(parameters);
         request.executeAsync();
+
+    }
+
+    private void checkLoginStatus(){
+
+        if(AccessToken.getCurrentAccessToken()!=null){
+
+            loaduserProfile(AccessToken.getCurrentAccessToken());
+
+        }
 
     }
 
