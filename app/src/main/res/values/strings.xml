@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FB_Prabeesh</string>
+
+    <string name="facebook_app_id">481577279124449</string>
+    <string name="fb_login_protocol_scheme">fb481577279124449</string>
+
+
+</resources>
